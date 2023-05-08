@@ -1,0 +1,8 @@
+
+Data:
+    For the customer, change path of database to Builder.buildDatabasePath() + /pharmacy404.db in DatabaseConnector class
+    createConnectionMethod() and ResetAppController class dropAllTablesMethod
+
+
+     For the developer, just set the database name 'pharmacy404.db' in DatabaseConnector class createConnectionMethod
+     and  ResetAppController class dropAllTablesMethod

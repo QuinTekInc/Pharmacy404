@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<tables>
+
+    <table name="admin_password" columns="encrypted_password text not null, encryption_key varchar(50) not null" />
+
+    <table name="sales" columns="id integer primary key autoincrement,
+            sale_date date not null,
+            quantity integer not null,
+            drug_id integer not null,
+            drug_name varchar(100) not null,
+            price double not null,
+            amount double not null,
+            foreign key(drug_id) references drugs(id)"/>
+
+    <table name="drugs" columns="id integer primary key autoincrement,
+             drug_name varchar(100) not null,
+             drug_type varchar(10) not null,
+             manufacturer varchar(100)  not null,
+             manufacture_date date,
+             expiration_date date not null,
+             quantity int not null,
+             wholesale_price double not null,
+             retail_price double not null"/>
+
+    <table name="logs" columns="id integer primary key autoincrement,
+             log_date date default current_date,
+             title varchar(300) not null,
+             details text not null" />
+
+
+</tables>

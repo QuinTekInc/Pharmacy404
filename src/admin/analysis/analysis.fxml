@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<JFXTabPane prefWidth="1130.0" stylesheets="@../../data/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.analysis.AnalysisController">
+   <Tab closable="false" text="Text Analysis">
+      <content>
+         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="parent">
+            <children>
+               <Label layoutX="22.0" layoutY="27.0" text="Admin Dashboard" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                  <font>
+                     <Font name="SansSerif Bold" size="25.0" />
+                  </font>
+               </Label>
+               <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="14.0" layoutY="53.0" pannable="true" styleClass="parent" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="50.0">
+                  <content>
+                     <HBox alignment="CENTER" styleClass="parent">
+                        <children>
+                           <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="300.0" styleClass="card">
+                              <children>
+                                 <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                    <HBox.margin>
+                                       <Insets left="10.0" />
+                                    </HBox.margin>
+                                    <image>
+                                       <Image url="@../../alert/icons/icons8-cedi-64.png" />
+                                    </image>
+                                 </ImageView>
+                                 <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                       <Label text="Daily Sales Average">
+                                          <font>
+                                             <Font name="SansSerif Bold Italic" size="14.0" />
+                                          </font>
+                                          <VBox.margin>
+                                             <Insets left="10.0" />
+                                          </VBox.margin>
+                                       </Label>
+                                       <Label fx:id="dailySalesAverageLabel" layoutX="10.0" layoutY="77.0">
+                                          <font>
+                                             <Font name="System Italic" size="18.0" />
+                                          </font>
+                                          <VBox.margin>
+                                             <Insets left="10.0" top="5.0" />
+                                          </VBox.margin>
+                                       </Label>
+                                    </children>
+                                 </VBox>
+                              </children>
+                              <HBox.margin>
+                                 <Insets bottom="5.0" left="5.0" right="5.0" />
+                              </HBox.margin>
+                           </HBox>
+                           <HBox alignment="CENTER_LEFT" layoutX="370.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="300.0" styleClass="card">
+                              <children>
+                                 <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                    <HBox.margin>
+                                       <Insets left="10.0" />
+                                    </HBox.margin>
+                                    <image>
+                                       <Image url="@../../alert/icons/icons8-ghana-coin-64.png" />
+                                    </image>
+                                 </ImageView>
+                                 <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                       <Label text="Weekly Sales Average">
+                                          <font>
+                                             <Font name="SansSerif Bold Italic" size="14.0" />
+                                          </font>
+                                          <VBox.margin>
+                                             <Insets left="10.0" />
+                                          </VBox.margin>
+                                       </Label>
+                                       <Label fx:id="weeklySalesAverageLabel" layoutX="10.0" layoutY="77.0">
+                                          <font>
+                                             <Font name="System Italic" size="18.0" />
+                                          </font>
+                                          <VBox.margin>
+                                             <Insets left="10.0" top="5.0" />
+                                          </VBox.margin>
+                                       </Label>
+                                    </children>
+                                 </VBox>
+                              </children>
+                              <HBox.margin>
+                                 <Insets bottom="5.0" left="5.0" right="5.0" />
+                              </HBox.margin>
+                           </HBox>
+                           <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="300.0" styleClass="card">
+                              <children>
+                                 <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                    <HBox.margin>
+                                       <Insets left="10.0" />
+                                    </HBox.margin>
+                                    <image>
+                                       <Image url="@../../alert/icons/icons8-ghana-coins-64.png" />
+                                    </image>
+                                 </ImageView>
+                                 <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                       <Label text="Monthly Sales Average">
+                                          <font>
+                                             <Font name="SansSerif Bold Italic" size="14.0" />
+                                          </font>
+                                          <VBox.margin>
+                                             <Insets left="10.0" />
+                                          </VBox.margin>
+                                       </Label>
+                                       <Label fx:id="monthlySalesAverageLabel" layoutX="10.0" layoutY="77.0">
+                                          <font>
+                                             <Font name="System Italic" size="18.0" />
+                                          </font>
+                                          <VBox.margin>
+                                             <Insets left="10.0" top="5.0" />
+                                          </VBox.margin>
+                                       </Label>
+                                    </children>
+                                 </VBox>
+                              </children>
+                              <HBox.margin>
+                                 <Insets bottom="5.0" left="5.0" right="5.0" />
+                              </HBox.margin>
+                           </HBox>
+                           <HBox alignment="CENTER_LEFT" layoutX="1070.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="300.0" styleClass="card">
+                              <children>
+                                 <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                    <HBox.margin>
+                                       <Insets left="10.0" />
+                                    </HBox.margin>
+                                    <image>
+                                       <Image url="@../../alert/icons/icons8-ghana-cedis-64.png" />
+                                    </image>
+                                 </ImageView>
+                                 <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                       <Label text="Yearly Sales Average">
+                                          <font>
+                                             <Font name="SansSerif Bold Italic" size="14.0" />
+                                          </font>
+                                          <VBox.margin>
+                                             <Insets left="10.0" />
+                                          </VBox.margin>
+                                       </Label>
+                                       <Label fx:id="yearlySalesAverageLabel" layoutX="10.0" layoutY="77.0">
+                                          <font>
+                                             <Font name="System Italic" size="18.0" />
+                                          </font>
+                                          <VBox.margin>
+                                             <Insets left="10.0" top="5.0" />
+                                          </VBox.margin>
+                                       </Label>
+                                    </children>
+                                 </VBox>
+                              </children>
+                              <HBox.margin>
+                                 <Insets bottom="5.0" left="5.0" right="5.0" />
+                              </HBox.margin>
+                           </HBox>
+                           <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="300.0" styleClass="card">
+                              <children>
+                                 <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                    <HBox.margin>
+                                       <Insets left="10.0" />
+                                    </HBox.margin>
+                                    <image>
+                                       <Image url="@../../alert/icons/icons8-pill-96.png" />
+                                    </image>
+                                 </ImageView>
+                                 <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                       <Label text="Most Sold Drug This Year">
+                                          <font>
+                                             <Font name="SansSerif Bold Italic" size="14.0" />
+                                          </font>
+                                          <VBox.margin>
+                                             <Insets left="10.0" />
+                                          </VBox.margin>
+                                       </Label>
+                                       <Label fx:id="mostSoldDrugLabel" layoutX="10.0" layoutY="77.0" wrapText="true">
+                                          <font>
+                                             <Font name="System Italic" size="18.0" />
+                                          </font>
+                                          <VBox.margin>
+                                             <Insets left="10.0" top="5.0" />
+                                          </VBox.margin>
+                                       </Label>
+                                    </children>
+                                 </VBox>
+                              </children>
+                              <HBox.margin>
+                                 <Insets bottom="5.0" left="5.0" right="5.0" />
+                              </HBox.margin>
+                           </HBox>
+                        </children>
+                     </HBox>
+                  </content>
+               </ScrollPane>
+               <VBox layoutX="26.0" layoutY="234.0" prefHeight="530.0" prefWidth="550.0" styleClass="card" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="215.0">
+                  <children>
+                     <Label text="Drugs Which are almost exipired">
+                        <VBox.margin>
+                           <Insets left="10.0" top="10.0" />
+                        </VBox.margin>
+                        <font>
+                           <Font size="16.0" />
+                        </font>
+                        <graphic>
+                           <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../../alert/icons/icons8-expired-96.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                     </Label>
+                     <ListView fx:id="expiredListView" onContextMenuRequested="#expiredListViewContextMenuRequested" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                        <VBox.margin>
+                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </VBox.margin>
+                        <contextMenu>
+                           <ContextMenu fx:id="expiredListViewContextMenu">
+                              <items>
+                                 <MenuItem mnemonicParsing="false" onAction="#addNewDrugBatch" text="Add New Batch" />
+                                 <MenuItem mnemonicParsing="false" onAction="#disposeDrug" text="Dispose Selected Drug" />
+                              </items>
+                           </ContextMenu>
+                        </contextMenu>
+                     </ListView>
+                  </children>
+               </VBox>
+               <VBox layoutX="553.0" layoutY="215.0" prefHeight="530.0" prefWidth="550.0" styleClass="card" AnchorPane.leftAnchor="570.0">
+                  <children>
+                     <Label text="Drugs which are almost Out of Stock">
+                        <VBox.margin>
+                           <Insets left="10.0" top="10.0" />
+                        </VBox.margin>
+                        <font>
+                           <Font size="16.0" />
+                        </font>
+                        <graphic>
+                           <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../../alert/icons/icons8-out-of-stock-96.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                     </Label>
+                     <ListView fx:id="outOfStockListView" onContextMenuRequested="#outOfListViewContextMenuRequested" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                        <VBox.margin>
+                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </VBox.margin>
+                        <contextMenu>
+                           <ContextMenu fx:id="outOfStockListViewContextMenu">
+                              <items>
+                                 <MenuItem mnemonicParsing="false" onAction="#updateDrugQuantity" text="Update Drug Quantity" />
+                              </items>
+                           </ContextMenu>
+                        </contextMenu>
+                     </ListView>
+                  </children>
+               </VBox>
+            </children>
+         </AnchorPane>
+      </content>
+   </Tab>
+   <Tab closable="false" text="Graphical Analysis">
+      <content>
+         <VBox styleClass="parent">
+            <Label layoutX="14.0" layoutY="14.0" text="Admin Dashboard (Graphical)" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <GridPane alignment="CENTER" hgap="10.0" layoutX="10.0" layoutY="45.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" vgap="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="45.0" VBox.vgrow="ALWAYS">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <VBox prefHeight="356.0" prefWidth="542.0" styleClass="graph-stack-pane">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="27.0" prefWidth="389.0">
+                           <children>
+                              <Label text="Select Graph Type :">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <RadioButton fx:id="yearlySalesBarChartRadio" mnemonicParsing="false" text="Bar Chart">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="yearlySalesLineChartRadio" layoutX="138.0" layoutY="10.0" mnemonicParsing="false" text="Line Chart">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="yearlySalesPieChartRadio" layoutX="343.0" layoutY="16.0" mnemonicParsing="false" text="Pie Chart">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" top="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <StackPane fx:id="yearlySaleGraphContainer">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                           </VBox.margin>
+                           <children>
+                              <BarChart fx:id="yearlySalesBarChart" title="Yearly Sales">
+                                 <xAxis>
+                                    <CategoryAxis label="Years" side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis label="Total" side="LEFT" />
+                                 </yAxis>
+                              </BarChart>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="356.0" prefWidth="542.0" styleClass="graph-stack-pane" GridPane.columnIndex="1">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="27.0" prefWidth="389.0">
+                           <children>
+                              <Label text="Select Graph Type :">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <RadioButton fx:id="monthlySalesBarChartRadio" mnemonicParsing="false" text="Bar Chart">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="monthlySalesLineChartRadio" layoutX="138.0" layoutY="10.0" mnemonicParsing="false" text="Line Chart">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="monthlySalesPieChartRadio" layoutX="343.0" layoutY="16.0" mnemonicParsing="false" text="Pie Chart">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" top="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <StackPane fx:id="monthSalesGraphContainer">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                           </VBox.margin>
+                           <children>
+                              <BarChart fx:id="monthlySalesBarChart" title="Monthly Sales">
+                                 <xAxis>
+                                    <CategoryAxis label="Months" side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis label="Total" side="LEFT" />
+                                 </yAxis>
+                              </BarChart>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="356.0" prefWidth="542.0" styleClass="graph-stack-pane" GridPane.rowIndex="1">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="27.0" prefWidth="389.0">
+                           <children>
+                              <Label text="Select Graph Type :">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <RadioButton fx:id="weeklySalesBarChartRadio" mnemonicParsing="false" text="Bar Chart">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="weeklySalesLineChartRadio" layoutX="138.0" layoutY="10.0" mnemonicParsing="false" text="Line Chart">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="weeklySalesPieChartRadio" layoutX="343.0" layoutY="16.0" mnemonicParsing="false" text="Pie Chart">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" top="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <StackPane fx:id="weeklySalGraphContainer">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                           </VBox.margin>
+                           <children>
+                              <BarChart fx:id="weeklySalesBarChart" title="Week Sales">
+                                 <xAxis>
+                                    <CategoryAxis label="Weeks" side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis label="Total" side="LEFT" />
+                                 </yAxis>
+                              </BarChart>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="356.0" prefWidth="542.0" styleClass="graph-stack-pane" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="27.0" prefWidth="389.0">
+                           <children>
+                              <Label text="Select Graph Type :">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <RadioButton fx:id="dailySalesBarChartRadio" mnemonicParsing="false" text="Bar Chart">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="dailySalesLineChartRadio" layoutX="138.0" layoutY="10.0" mnemonicParsing="false" text="Line Chart">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="dailySalesPieChartRadio" layoutX="343.0" layoutY="16.0" mnemonicParsing="false" text="Pie Chart">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" top="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <StackPane fx:id="dailySalesGraphContainer">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                           </VBox.margin>
+                           <children>
+                              <BarChart fx:id="dailySalesBarChart" title="Daily Sales">
+                                 <xAxis>
+                                    <CategoryAxis label="Days" side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis label="Total" side="LEFT" />
+                                 </yAxis>
+                              </BarChart>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </GridPane>
+
+         </VBox>
+      </content>
+   </Tab>
+</JFXTabPane>

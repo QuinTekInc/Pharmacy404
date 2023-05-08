@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="790.0" prefWidth="1098.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sales.SalesController">
+   <children>
+      <Label text="Sales" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <font>
+            <Font name="SansSerif Regular" size="24.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../alert/icons/icons8-total-sales-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <DatePicker fx:id="localDatePicker" layoutX="917.0" layoutY="20.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+      <HBox alignment="CENTER" layoutX="14.0" layoutY="49.0" prefHeight="60.0" prefWidth="200.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="45.0">
+         <children>
+            <TextField fx:id="drugNameTextField" prefHeight="35.0" promptText="Drug name" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <ComboBox fx:id="manufacturerComboBox" editable="true" prefHeight="35.0" prefWidth="200.0" promptText="Manufacturer" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </ComboBox>
+            <ComboBox fx:id="drugTypeComboBox" editable="true" prefHeight="35.0" prefWidth="140.0" promptText="Drug Type">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </ComboBox>
+            <ComboBox fx:id="manufactureDateComboBox" prefHeight="35.0" prefWidth="120.0" promptText="Batch Date" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </ComboBox>
+            <TextField fx:id="quantityTextField" layoutX="78.0" layoutY="10.0" prefHeight="35.0" prefWidth="100.0" promptText="Quantity">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <TextField fx:id="priceTextField" layoutX="295.0" layoutY="10.0" prefHeight="35.0" prefWidth="100.0" promptText="Price">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <TextField fx:id="amountTextField" layoutX="723.0" layoutY="28.0" prefHeight="35.0" prefWidth="110.0" promptText="Amount">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <Button fx:id="addButton" mnemonicParsing="false" onAction="#addSale" prefHeight="35.0" text="Add Sale">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <TableView fx:id="salesTable" layoutX="20.0" layoutY="123.0" onContextMenuRequested="#tableContextMenuRequested" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="115.0">
+        <columns>
+          <TableColumn fx:id="quantityCol" prefWidth="75.0" text="Quantity" />
+            <TableColumn fx:id="drugNameCol" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="unitPriceCol" prefWidth="75.0" text="Price" />
+            <TableColumn fx:id="amountCol" prefWidth="75.0" text="Amount" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+         <contextMenu>
+            <ContextMenu fx:id="salesTableContextMenu">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#handleEdit" text="Edit selected item" />
+                 <MenuItem mnemonicParsing="false" onAction="#removeItem" text="Remove selected item" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TableView>
+      <HBox layoutX="801.0" layoutY="690.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <children>
+            <Label text="Total Amount">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="totalTextField" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

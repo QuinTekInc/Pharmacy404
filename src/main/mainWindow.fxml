@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="850.0" prefWidth="1370.0" styleClass="parent" stylesheets="@../data/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainWindowController">
+   <children>
+      <BorderPane fx:id="mainBorderPane" prefHeight="200.0" prefWidth="200.0">
+         <left>
+            <VBox fx:id="navigationBox" alignment="TOP_CENTER" prefHeight="790.0" prefWidth="209.0" styleClass="side-box" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="110.0" styleClass="program-name-box">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../alert/icons/icons8-pharmacy-shop-96.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" contentDisplay="TOP" maxWidth="1.7976931348623157E308" text="Pharmacy 404" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Button contentDisplay="TOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleDashBoard" prefHeight="100.0" prefWidth="272.0" text="Dashboard">
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../alert/icons/icons8-dashboard-layout-96.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="120.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleSales" prefHeight="100.0" prefWidth="272.0" text="Add Sales">
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../alert/icons/icons8-total-sales-96.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="183.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleStock" prefHeight="100.0" prefWidth="272.0" text="Drug Stock">
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../alert/icons/icons8-pill-96.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Pane VBox.vgrow="ALWAYS" />
+                  <Button contentDisplay="TOP" layoutX="15.0" layoutY="440.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleAdminButtonPressed" prefHeight="100.0" prefWidth="272.0" text="Admin">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../alert/icons/icons8-administrator-male-96.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="15.0" layoutY="335.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleAboutSoftware" prefHeight="100.0" prefWidth="272.0" text="About Software">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../alert/icons/icons8-about-96.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <AnchorPane fx:id="dashBoardPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="42.0" layoutY="36.0" styleClass="title-label" text="Dashboard" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="10.0">
+                     <font>
+                        <Font name="SansSerif Regular" size="25.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../alert/icons/icons8-dashboard-96.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <StackPane fx:id="graphParent" layoutX="14.0" layoutY="257.0" prefHeight="610.0" prefWidth="663.0" styleClass="graph-stack-pane" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="420.0" AnchorPane.topAnchor="190.0">
+                     <children>
+                        <LineChart fx:id="lineChart" layoutX="21.0" layoutY="65.0" title="Monthly Sales">
+                          <xAxis>
+                            <CategoryAxis label="Months" side="BOTTOM" fx:id="xaxis" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis label="Amount" side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                     </children>
+                  </StackPane>
+                  <VBox fx:id="listParent" layoutX="535.0" layoutY="295.0" prefHeight="200.0" prefWidth="400.0" styleClass="list-view-container" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="190.0">
+                     <children>
+                        <Label fx:id="almostExpiredHeaderLabel" text="Expired or Almost Expired Drugs">
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../alert/icons/icons8-expired-96.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                        <ListView fx:id="expiredListView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </ListView>
+                        <Label fx:id="outOfStockHeaderLabel" layoutX="20.0" layoutY="20.0" text="Out of Stock or Almost Out of Stock Drugs">
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../alert/icons/icons8-out-of-stock-96.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                        <ListView fx:id="outOfStockListView" layoutX="15.0" layoutY="42.0" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </ListView>
+                     </children>
+                  </VBox>
+                  <AnchorPane layoutX="20.0" layoutY="40.0" prefHeight="117.0" prefWidth="349.0" styleClass="card" AnchorPane.topAnchor="60.0">
+                     <children>
+                        <Label layoutX="160.0" layoutY="34.0" text="Total Sales for today" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="30.0">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="80.0" fitWidth="80.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
+                           <image>
+                              <Image url="@../alert/icons/icons8-ghana-coin-64.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="dashBoardSalesLabel" layoutX="160.0" layoutY="69.0" prefHeight="17.0" prefWidth="210.0" styleClass="amount-label" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="65.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="385.0" layoutY="40.0" prefHeight="117.0" prefWidth="349.0" styleClass="card" AnchorPane.leftAnchor="380.0" AnchorPane.topAnchor="60.0">
+                     <children>
+                        <Label layoutX="160.0" layoutY="34.0" text="Sales for this week" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="30.0">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="80.0" fitWidth="80.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
+                           <image>
+                              <Image url="@../alert/icons/icons8-ghana-coins-64.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="thisWeekSalesLabel" layoutX="160.0" layoutY="69.0" prefHeight="17.0" prefWidth="210.0" styleClass="amount-label" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="65.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="744.0" layoutY="45.0" prefHeight="117.0" prefWidth="349.0" styleClass="card" AnchorPane.leftAnchor="739.0" AnchorPane.topAnchor="60.0">
+                     <children>
+                        <Label layoutX="160.0" layoutY="34.0" text="Sales for this month" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="30.0">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="80.0" fitWidth="80.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="239.0" AnchorPane.topAnchor="15.0">
+                           <image>
+                              <Image url="@../alert/icons/icons8-ghana-cedis-64.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="thisMonthSaleTextField" layoutX="160.0" layoutY="69.0" prefHeight="17.0" prefWidth="210.0" styleClass="amount-label" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="65.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>
